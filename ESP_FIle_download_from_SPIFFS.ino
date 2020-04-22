@@ -107,7 +107,7 @@ void File_Download() { // This gets called twice, the first pass selects the inp
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 void SD_file_download(String filename) {
-  File download = SPIFFS.open("/" + filename, "w");
+  File download = SPIFFS.open("/" + filename, "r");
   if (download) {
     server.sendHeader("Content-Type", "text/text");
     server.sendHeader("Content-Disposition", "attachment; filename=" + filename);
